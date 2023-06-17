@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BCDC1FF62A3C4FE400AD3621 /* FindMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC1FF52A3C4FE400AD3621 /* FindMovieCell.swift */; };
 		BCDC1FF82A3C68AC00AD3621 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC1FF72A3C68AC00AD3621 /* DetailViewController.swift */; };
+		BCDC1FFE2A3DA15A00AD3621 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDC1FFD2A3DA15A00AD3621 /* ReviewCell.swift */; };
 		BCDEB51F2A3B0D2B00D1DB83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDEB51E2A3B0D2B00D1DB83 /* AppDelegate.swift */; };
 		BCDEB5212A3B0D2B00D1DB83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDEB5202A3B0D2B00D1DB83 /* SceneDelegate.swift */; };
 		BCDEB5232A3B0D2B00D1DB83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDEB5222A3B0D2B00D1DB83 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		BCDC1FF52A3C4FE400AD3621 /* FindMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMovieCell.swift; sourceTree = "<group>"; };
 		BCDC1FF72A3C68AC00AD3621 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BCDC1FFD2A3DA15A00AD3621 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		BCDEB51B2A3B0D2B00D1DB83 /* REC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDEB51E2A3B0D2B00D1DB83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCDEB5202A3B0D2B00D1DB83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				BCDEB5362A3B210F00D1DB83 /* MovieCell.swift */,
 				BCDC1FF52A3C4FE400AD3621 /* FindMovieCell.swift */,
 				BCDC1FF72A3C68AC00AD3621 /* DetailViewController.swift */,
+				BCDC1FFD2A3DA15A00AD3621 /* ReviewCell.swift */,
 			);
 			path = REC;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				BCDEB5212A3B0D2B00D1DB83 /* SceneDelegate.swift in Sources */,
 				BCDEB5372A3B210F00D1DB83 /* MovieCell.swift in Sources */,
 				BCDEB5352A3B122700D1DB83 /* FindViewController.swift in Sources */,
+				BCDC1FFE2A3DA15A00AD3621 /* ReviewCell.swift in Sources */,
 				BCDC1FF62A3C4FE400AD3621 /* FindMovieCell.swift in Sources */,
 				BCDC1FF82A3C68AC00AD3621 /* DetailViewController.swift in Sources */,
 			);
