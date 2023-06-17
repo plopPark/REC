@@ -30,7 +30,7 @@ class FindViewController: UIViewController, UITableViewDataSource, UITableViewDe
         findTableView.delegate = self
         fetchAndFilterMovies()
     }
-    //이동
+    //화면이동
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
             guard let destinationVC = segue.destination as? DetailViewController,
@@ -41,6 +41,7 @@ class FindViewController: UIViewController, UITableViewDataSource, UITableViewDe
             destinationVC.getTitle = movieFind.title
         }
     }
+    //영화 정보 렌더링
     func fetchAndFilterMovies() {
         if let url = Bundle.main.url(forResource: "top100_movies", withExtension: "json") {
             do {
@@ -58,6 +59,7 @@ class FindViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+    //테이블 관련 메소드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredMovies.count
     }
@@ -75,4 +77,5 @@ class FindViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         return cell
     }
+    
 }

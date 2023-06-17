@@ -13,8 +13,6 @@ struct Movie: Decodable {
     let genres: [String]
 }
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
-    
     // 테이블 뷰
     @IBOutlet weak var tableView: UITableView!
     //정렬방식
@@ -34,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             updateSortButton()
         }
     }
-    
+    //영화 데이터
     var movies: [Movie] = [] {
         didSet {
             self.tableView.reloadData()
@@ -56,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func findButton(_ sender: UIButton) {
      //performSegue(withIdentifier: "Find", sender: self)
     }
-    
+    //화면 이동
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Find" {
             let findCV = segue.destination as! FindViewController
@@ -70,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             destinationVC.getTitle = movie.title
         }
     }
-
+    //영화 정보 가져오기
     func fetchMovies() {
         if let url = Bundle.main.url(forResource: "top100_movies", withExtension: "json") {
             do {
@@ -94,7 +92,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return movies.sorted(by: { $0.vote_count > $1.vote_count })
         }
     }
-    
+    //정렬 버튼 선택씨
     @IBAction func didTapSortButton(_ sender: UIButton) {
         switch currentSortOption {
         case .score:
@@ -105,7 +103,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             movies = sortMovies(movies, by: .score)
         }
     }
-    
+    //버튼 텍스트 변경
     func updateSortButton() {
         switch currentSortOption {
         case .score:
@@ -119,9 +117,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //상세페이지
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //performSegue(withIdentifier: "Detail", sender: self)
     }
-    // UITableViewDataSource methods
+    // 테이블 관련 메소드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -132,7 +129,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = movies[indexPath.row]
         
-        // Setting the rank to the label
+        //순위
         let rank = indexPath.row + 1
         cell.titleLabel.text = "\(rank). \(movie.title)"
 
@@ -155,12 +152,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         reviewCount.append(countVoteImageString)
         reviewCount.append(NSAttributedString(string: " " + String(movie.vote_count)))
         cell.voteCountLabel.attributedText = reviewCount
-        
+        //이미지
         cell.posterImageView.image = UIImage(named: "poster")
         
         return cell
     }
-    //장르
+    //장르 선택 버튼
     @IBAction func genreButtonTapped(_ sender: UIButton) {
         let alert = UIAlertController(title: "Select Genre", message: nil, preferredStyle: .actionSheet)
         for genre in genreList {
@@ -172,7 +169,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         self.present(alert, animated: true, completion: nil)
     }
-    
+    //장르 선택 -> 정렬
     func filterMoviesByGenre() {
         fetchMovies()
         if selectedGenre != "All" {
