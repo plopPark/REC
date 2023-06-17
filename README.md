@@ -1,6 +1,6 @@
 # REC
 ### 2023-01학기 iOS 미니 프로젝트
-<img width="100" alt="첫화면" src="https://github.com/plopPark/REC/assets/114977536/65f9807b-879f-411a-abbc-fa00fd1bd6d8">
+![런치](https://github.com/plopPark/REC/assets/114977536/a6ba783a-7066-4032-87ad-497dafef71ed)
 
 ## 메인페이지
 #### 1. 앱을 시작하면 평점이 높은 20개의 영화를 보여준다.
