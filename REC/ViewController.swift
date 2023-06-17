@@ -159,7 +159,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     //장르 선택 버튼
     @IBAction func genreButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Select Genre", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "장르 선택", message: nil, preferredStyle: .actionSheet)
         for genre in genreList {
             alert.addAction(UIAlertAction(title: genre, style: .default , handler:{ (UIAlertAction) in
                 self.selectedGenre = genre

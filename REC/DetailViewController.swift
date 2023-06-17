@@ -106,11 +106,11 @@ class DetailViewController: UIViewController,UITableViewDelegate, UITableViewDat
     //사용자 후기 작성.
     @IBAction func sendReviewClicked(_ sender: UIButton) {
         if writeReview.text?.trimmingCharacters(in: .whitespaces).isEmpty ?? true {
-            let alert = UIAlertController(title: "Error", message: "내용을 입력해 주세요!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "내용을 입력하세요!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            let rateMenu = UIAlertController(title: nil, message: "Select Rate", preferredStyle: .actionSheet)
+            let rateMenu = UIAlertController(title: nil, message: "별점 선택", preferredStyle: .actionSheet)
             
             for rate in 1...5 {
                 rateMenu.addAction(UIAlertAction(title: "\(String(repeating: "⭐️", count: rate))", style: .default, handler: { [weak self] action in
